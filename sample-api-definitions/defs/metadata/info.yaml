@@ -1,0 +1,8 @@
+openapi: 3.0.1
+info:
+  title: "Sample API project"
+  version: 1.0.0-SNAPSHOT
+  x-logo:
+    url: "https://www.nutanix.com/content/dam/nutanix/logos/nutanix/nutanix-neg.png"
+    backgroundColor: "#FFFFFF"
+    altText: "Sample Logo"

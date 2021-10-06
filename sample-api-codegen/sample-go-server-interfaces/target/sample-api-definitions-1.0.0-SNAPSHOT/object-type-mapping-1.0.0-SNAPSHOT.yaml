@@ -1,0 +1,10 @@
+mynamespace.v4.mymodule.Hello: mynamespace.v4.r0.a1.mymodule.Hello
+mynamespace.v4.mymodule.Message: mynamespace.v4.r0.a1.mymodule.Message
+mynamespace.v4.mymodule.ApiResponseMetadata: mynamespace.v4.r0.a1.mymodule.ApiResponseMetadata
+mynamespace.v4.mymodule.ApiLink: mynamespace.v4.r0.a1.mymodule.ApiLink
+mynamespace.v4.error.ErrorResponse: mynamespace.v4.r0.a1.error.ErrorResponse
+mynamespace.v4.error.AppMessage: mynamespace.v4.r0.a1.error.AppMessage
+mynamespace.v4.error.MessageSeverity: mynamespace.v4.r0.a1.error.MessageSeverity
+mynamespace.v4.error.SchemaValidationError: mynamespace.v4.r0.a1.error.SchemaValidationError
+mynamespace.v4.error.SchemaValidationErrorMessage: mynamespace.v4.r0.a1.error.SchemaValidationErrorMessage
+mynamespace.v4.mymodule.HelloApiResponse: mynamespace.v4.r0.a1.mymodule.HelloApiResponse

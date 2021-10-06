@@ -1,0 +1,38 @@
+paths:
+  /sayhello:
+    get:
+      tags:
+        - "ApiEndpoint(Hello)"
+      description: 'Get Hello message'
+      operationId: "sayHello"
+      x-codegen-hint:
+        spring-mvc:
+          - type: async
+            properties:
+              async: true
+      responses:
+        200:
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "ModelRef({/namespaces/myfirstnamespace/versioned/v1/modules/mymodule/alpha/models/Hello})"
+        400:
+          description: "Failure"
+          content:
+            application/json:
+              schema:
+                $ref: "ModelRef({/namespaces/myfirstnamespace/versioned/v1/modules/mymodule/alpha/models/Message})"
+        x-codegen-hint:
+          $any:
+            - type: entity-identifier
+              properties:
+                identifiers:
+                  - type: "ModelRef({/namespaces/myfirstnamespace/versioned/v1/modules/mymodule/alpha/models/Hello})"
+                    index: 1005
+                  - type: "ModelRef({/namespaces/myfirstnamespace/versioned/v1/modules/mymodule/alpha/models/Message})"
+                    index: 1006
+        x-api-responses:
+          responseModelName: "HelloApiResponse"
+          template: "/namespaces/myfirstnamespace/versioned/v1/modules/mymodule/alpha/models/apiResponse"
+

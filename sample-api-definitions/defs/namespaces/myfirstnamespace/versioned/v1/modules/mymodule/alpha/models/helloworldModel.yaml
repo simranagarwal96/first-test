@@ -1,0 +1,62 @@
+components:
+  schemas:
+    Hello:
+      type: "object"
+      properties:
+        value:
+          type: "string"
+          x-codegen-hint:
+            $any:
+              - type: entity-identifier
+                properties:
+                  identifiers:
+                    index: 1001
+    Message:
+      type: "object"
+      properties:
+        body:
+          type: "string"
+        severity:
+          type: "string"
+      x-codegen-hint:
+        $any:
+          - type: entity-identifier
+            properties:
+              identifiers:
+                - name: body
+                  index: 1001
+                - name: severity
+                  index: 1002
+    ApiResponseMetadata:
+      description: "Metadata associated with API responses"
+      type: "object"
+      properties:
+        links:
+          type: "array"
+          items:
+            $ref: "ModelRef({./ApiLink})"
+          x-codegen-hint:
+            $any:
+              - type: entity-identifier
+                properties:
+                  identifiers:
+                    index: 1001
+    ApiLink:
+      type: "object"
+      description: "HATEOAS links for the request.  For paginated requests includes prev/next/first and last links"
+      properties:
+        href:
+          type: "string"
+          description: "The URL that points to the relationship"
+        rel:
+          type: "string"
+          description: "The name of the relationship"
+      x-codegen-hint:
+        $any:
+          - type: entity-identifier
+            properties:
+              identifiers:
+                - name: href
+                  index: 1001
+                - name: rel
+                  index: 1002

@@ -1,0 +1,509 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Sample API project",
+    "version" : "1.0.0-SNAPSHOT",
+    "x-logo" : {
+      "url" : "https://www.nutanix.com/content/dam/nutanix/logos/nutanix/nutanix-neg.png",
+      "backgroundColor" : "#FFFFFF",
+      "altText" : "Sample Logo"
+    }
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/mynamespace/v4.0.a1/mymodule/sayhello" : {
+      "get" : {
+        "tags" : [ "Hello" ],
+        "description" : "Get Hello message",
+        "operationId" : "sayHello",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.HelloApiResponse"
+                }
+              }
+            }
+          },
+          "4XX" : {
+            "description" : "Platform generated 4XX response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.HelloApiResponse"
+                }
+              }
+            }
+          },
+          "5XX" : {
+            "description" : "Platform generated 5XX response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.HelloApiResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-hint" : {
+          "spring-mvc" : [ {
+            "type" : "async",
+            "properties" : {
+              "async" : true
+            }
+          } ]
+        }
+      },
+      "x-api-namespace" : "mynamespace",
+      "x-api-namespace-version" : "v4.r0.a1",
+      "x-api-namespace-module" : "mymodule",
+      "x-odp-apioperation-package" : "mynamespace.v4.r0.a1.mymodule",
+      "x-odp-apioperation-tag" : "__mynamespace.v4.r0.a1.mymodule__Hello"
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "mynamespace.v4.r0.a1.mymodule.Hello" : {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "x-codegen-hint" : {
+              "$any" : [ {
+                "type" : "entity-identifier",
+                "properties" : {
+                  "identifiers" : {
+                    "index" : 1001
+                  }
+                }
+              } ]
+            }
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "x-namespace-version-folder-path" : "/namespaces/myfirstnamespace/versioned/v1/"
+      },
+      "mynamespace.v4.r0.a1.mymodule.Message" : {
+        "type" : "object",
+        "properties" : {
+          "body" : {
+            "type" : "string"
+          },
+          "severity" : {
+            "type" : "string"
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "body",
+                "index" : 1001
+              }, {
+                "name" : "severity",
+                "index" : 1002
+              } ]
+            }
+          } ]
+        },
+        "x-namespace-version-folder-path" : "/namespaces/myfirstnamespace/versioned/v1/"
+      },
+      "mynamespace.v4.r0.a1.mymodule.ApiResponseMetadata" : {
+        "type" : "object",
+        "properties" : {
+          "links" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.ApiLink"
+            },
+            "x-codegen-hint" : {
+              "$any" : [ {
+                "type" : "entity-identifier",
+                "properties" : {
+                  "identifiers" : {
+                    "index" : 1001
+                  }
+                }
+              } ]
+            }
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "Metadata associated with API responses",
+        "x-namespace-version-folder-path" : "/namespaces/myfirstnamespace/versioned/v1/"
+      },
+      "mynamespace.v4.r0.a1.mymodule.ApiLink" : {
+        "type" : "object",
+        "properties" : {
+          "href" : {
+            "type" : "string",
+            "description" : "The URL that points to the relationship"
+          },
+          "rel" : {
+            "type" : "string",
+            "description" : "The name of the relationship"
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "HATEOAS links for the request.  For paginated requests includes prev/next/first and last links",
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "href",
+                "index" : 1001
+              }, {
+                "name" : "rel",
+                "index" : 1002
+              } ]
+            }
+          } ]
+        },
+        "x-namespace-version-folder-path" : "/namespaces/myfirstnamespace/versioned/v1/"
+      },
+      "mynamespace.v4.r0.a1.error.ErrorResponse" : {
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "oneOf" : [ {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.error.AppMessage"
+              }
+            }, {
+              "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.error.SchemaValidationError"
+            } ],
+            "x-codegen-hint" : {
+              "$any" : [ {
+                "type" : "entity-identifier",
+                "properties" : {
+                  "identifiers" : [ {
+                    "type" : "#/components/schemas/mynamespace.v4.r0.a1.error.AppMessage",
+                    "container" : "array",
+                    "index" : 201
+                  }, {
+                    "type" : "#/components/schemas/mynamespace.v4.r0.a1.error.SchemaValidationError",
+                    "index" : 202
+                  } ]
+                }
+              } ]
+            }
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "This schema is auto-generated by the Open API Dev Platform as REST Response for 4xx and 5xx error responses."
+      },
+      "mynamespace.v4.r0.a1.error.AppMessage" : {
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          },
+          "severity" : {
+            "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.error.MessageSeverity"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string",
+            "description" : "The locale for the message description.",
+            "default" : "en_US"
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "This schema is generated from AppMessage.java",
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "message",
+                "index" : 201
+              }, {
+                "name" : "severity",
+                "index" : 202
+              }, {
+                "name" : "code",
+                "index" : 203
+              }, {
+                "name" : "locale",
+                "index" : 204
+              } ]
+            }
+          } ]
+        }
+      },
+      "mynamespace.v4.r0.a1.error.MessageSeverity" : {
+        "type" : "string",
+        "description" : "Enum schema MessageSeverity",
+        "enum" : [ "INFO", "ERROR", "WARNING", "$UNKNOWN" ],
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "value" : "INFO",
+                "index" : 201
+              }, {
+                "value" : "ERROR",
+                "index" : 202
+              }, {
+                "value" : "WARNING",
+                "index" : 203
+              }, {
+                "value" : "$UNKNOWN",
+                "index" : 0
+              } ]
+            }
+          } ]
+        }
+      },
+      "mynamespace.v4.r0.a1.error.SchemaValidationError" : {
+        "type" : "object",
+        "properties" : {
+          "timestamp" : {
+            "type" : "string"
+          },
+          "statusCode" : {
+            "type" : "integer"
+          },
+          "error" : {
+            "type" : "string"
+          },
+          "path" : {
+            "type" : "string"
+          },
+          "validationErrorMessages" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.error.SchemaValidationErrorMessage"
+            }
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "This schema is generated from SchemaValidationError.java",
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "timestamp",
+                "index" : 201
+              }, {
+                "name" : "statusCode",
+                "index" : 202
+              }, {
+                "name" : "error",
+                "index" : 203
+              }, {
+                "name" : "path",
+                "index" : 204
+              }, {
+                "name" : "validationErrorMessages",
+                "index" : 205
+              } ]
+            }
+          } ]
+        }
+      },
+      "mynamespace.v4.r0.a1.error.SchemaValidationErrorMessage" : {
+        "type" : "object",
+        "properties" : {
+          "location" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "attributePath" : {
+            "type" : "string"
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "This schema is generated from SchemaValidationErrorMessage.java",
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "location",
+                "index" : 201
+              }, {
+                "name" : "message",
+                "index" : 202
+              }, {
+                "name" : "attributePath",
+                "index" : 203
+              } ]
+            }
+          } ]
+        }
+      },
+      "mynamespace.v4.r0.a1.mymodule.HelloApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "metadata" : {
+            "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.ApiResponseMetadata"
+          },
+          "data" : {
+            "discriminator" : {
+              "propertyName" : "$objectType"
+            },
+            "oneOf" : [ {
+              "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.Hello"
+            }, {
+              "$ref" : "#/components/schemas/mynamespace.v4.r0.a1.error.ErrorResponse"
+            } ],
+            "x-codegen-hint" : {
+              "$any" : [ {
+                "type" : "entity-identifier",
+                "properties" : {
+                  "identifiers" : [ {
+                    "type" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.Hello",
+                    "index" : 1005
+                  }, {
+                    "type" : "#/components/schemas/mynamespace.v4.r0.a1.mymodule.Message",
+                    "index" : 1006
+                  }, {
+                    "type" : "#/components/schemas/mynamespace.v4.r0.a1.error.ErrorResponse",
+                    "index" : 400
+                  } ]
+                }
+              } ]
+            }
+          },
+          "$reserved" : {
+            "type" : "object",
+            "additionalProperties" : true
+          },
+          "$objectType" : {
+            "type" : "string"
+          },
+          "$unknownFields" : {
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "additionalProperties" : false,
+        "description" : "REST Response for all response codes in api path /mynamespace/v4.0.a1/mymodule/sayhello Get operation",
+        "x-codegen-hint" : {
+          "$any" : [ {
+            "type" : "entity-identifier",
+            "properties" : {
+              "identifiers" : [ {
+                "name" : "metadata",
+                "index" : 1001
+              } ]
+            }
+          } ]
+        },
+        "x-generated-api-response" : true
+      }
+    },
+    "responses" : { },
+    "parameters" : { },
+    "examples" : { },
+    "requestBodies" : { },
+    "headers" : { },
+    "securitySchemes" : { },
+    "links" : { },
+    "callbacks" : { }
+  }
+}

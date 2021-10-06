@@ -1,0 +1,26 @@
+{
+  "version" : "1.0.0-SNAPSHOT",
+  "projectPrefix" : "myn",
+  "packagePrefix" : "dp1.myn",
+  "namespaces" : [ {
+    "family" : 4,
+    "version" : "v4.r0",
+    "prefix" : "MYN",
+    "name" : "mynamespace",
+    "versionType" : "a1",
+    "extId" : "65c91106-6d64-45af-abb4-5e94574ab9ce",
+    "modelDependencies" : [ ],
+    "alphaPaths" : [ "/mynamespace/v4.0.a1/mymodule/sayhello" ],
+    "betaPaths" : [ ],
+    "releasedPaths" : [ ],
+    "alphaModels" : [ "dp1.myn.mynamespace.v4.r0.a1.error.MessageSeverity", "dp1.myn.mynamespace.v4.r0.a1.mymodule.ApiLink", "dp1.myn.mynamespace.v4.r0.a1.error.SchemaValidationErrorMessage", "dp1.myn.mynamespace.v4.r0.a1.mymodule.ApiResponseMetadata", "dp1.myn.mynamespace.v4.r0.a1.error.SchemaValidationError", "dp1.myn.mynamespace.v4.r0.a1.mymodule.Hello", "dp1.myn.mynamespace.v4.r0.a1.mymodule.Message", "dp1.myn.mynamespace.v4.r0.a1.mymodule.HelloApiResponse", "dp1.myn.mynamespace.v4.r0.a1.error.AppMessage", "dp1.myn.mynamespace.v4.r0.a1.error.ErrorResponse" ],
+    "betaModels" : [ ],
+    "releasedModels" : [ ],
+    "profiles" : [ {
+      "name" : "all",
+      "priority" : 2147483647,
+      "expression" : "true",
+      "description" : "default profile"
+    } ]
+  } ]
+}
